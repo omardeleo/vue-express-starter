@@ -1,8 +1,15 @@
 module.exports = {
-  "transpileDependencies": [
-    "vuetify"
-  ],
+  transpileDependencies: ['vuetify'],
   devServer: {
-    disableHostCheck: true
-  }
-}
+    port: 3000,
+    disableHostCheck: true,
+    proxy: {
+      '^/api': {
+        target: 'http://backend:8080',
+      },
+      '^/test-bucket': {
+        target: 'http://localstack:4566',
+      },
+    },
+  },
+};
