@@ -3,7 +3,11 @@
     <v-card class="pa-2" outlined tile>
       <h2>Use Vuetify Components</h2>
       <p>Vuetify provides a variety of UI components to render data.</p>
-      <p>[List items]</p>
+      <v-list-item-group>
+        <v-chip v-for="season of data.seasons" :key="`${season}${Date.now()}`">
+          {{ season }}
+        </v-chip>
+      </v-list-item-group>
       <p>
         To change the chips above to list items, open
         [frontend/src/components/VuetifyCard.vue] and replace the following
@@ -23,5 +27,12 @@
 <script>
 export default {
   name: 'VuetifyCard',
+  data() {
+    return {
+      data: {
+        seasons: ['Winter', 'Spring', 'Summer', 'Fall'],
+      },
+    };
+  },
 };
 </script>
