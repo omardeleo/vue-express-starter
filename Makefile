@@ -11,5 +11,5 @@ run:
 	docker-compose up
 
 shell:
-	docker-compose run vue \
+	docker-compose run frontend \
 		sh
