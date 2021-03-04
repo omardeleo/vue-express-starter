@@ -1,16 +1,19 @@
 <template>
   <v-col cols="12" sm="4">
-    <v-card class="pa-2" outlined tile>
+    <v-card class="pa-2 card" outlined tile>
       <h2>Connect to a server</h2>
-      <h3>Powered by [Backend logo]</h3>
+      <div>
+        <h3>Powered by</h3>
+        <img src="../assets/express.png" />
+      </div>
       <p>
         This Vue frontend is connected to an Express server. Below is the
         response message we receive when we ping the server:
       </p>
       <p>{{ response }}</p>
       <p>
-        The server ping count is stored to the database. Click below to reset
-        the counter:
+        The server ping count is stored to the database. Click below to
+        <b>reset the counter</b>:
       </p>
       <v-btn
         depressed
@@ -22,8 +25,12 @@
         RESET COUNTER
       </v-btn>
       <p>
-        The endpoint that resets the ping counter is located in
-        [backend/src/routes/index.js]:
+        The <b>endpoint</b> that resets the ping counter is located in
+        <code>
+          <a :href="url" target="_blank" rel="noopener">
+            backend/src/routes/index.js</a
+          ></code
+        >:
       </p>
       <div class="editor-container">
         <prism-editor
@@ -61,7 +68,8 @@ export default {
   },
   data: () => ({
     response: '',
-    codeSnippet1: codeSnippet1
+    codeSnippet1: codeSnippet1,
+    url: `${process.env.VUE_APP_STARTER_REPO_URL}backend/src/routes/index.js#L101-L105`
   }),
   mounted() {
     this.fetchData();

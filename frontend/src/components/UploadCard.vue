@@ -1,12 +1,15 @@
 <template>
   <v-col cols="12" sm="4">
-    <v-card class="pa-2" outlined tile>
+    <v-card class="pa-2 card" outlined tile>
       <h2>Store files in S3, locally</h2>
-      <h3>Powered by [LocalStack logo]</h3>
+      <div>
+        <h3>Powered by</h3>
+        <img src="../assets/localStackLogo.png" />
+      </div>
       <p>Click below to select and upload an image from your computer.</p>
       <p>
         The image will be <b>stored in a local S3 bucket</b>, powered by
-        <b>LocalStack</b>
+        <b><a :href="url" target="_blank" rel="noopener">LocalStack</a></b>
         - a fully functional local AWS cloud stack, and displayed below.
       </p>
       <div>
@@ -29,7 +32,7 @@
       </div>
       <v-row>
         <v-col
-          v-for="filename in data.filenames"
+          v-for="filename in filenames"
           :key="filename"
           class="d-flex child-flex"
           cols="4"
@@ -44,13 +47,10 @@
 <script>
 export default {
   name: 'UploadCard',
-  data() {
-    return {
-      data: {
-        filenames: []
-      }
-    };
-  },
+  data: () => ({
+    filenames: [],
+    url: 'https://github.com/localstack/localstack'
+  }),
   mounted() {
     this.fetchBucketFiles();
   },
@@ -69,7 +69,7 @@ export default {
                   .map(file => `${bucket}/${file['Key']}`)
                   .reverse()
               : [];
-            this.data.filenames = filenames;
+            this.filenames = filenames;
           },
           error => {
             console.log(error);

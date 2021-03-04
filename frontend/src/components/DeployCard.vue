@@ -1,20 +1,37 @@
 <template>
   <v-col cols="12" sm="4">
-    <v-card class="pa-2" outlined tile>
+    <v-card class="pa-2 card" outlined tile>
       <h2>Deploy your app to the cloud</h2>
-      <h3>Powered by [Shipyard logo]</h3>
+      <div>
+        <h3>Powered by</h3>
+        <img src="../assets/logo.png" />
+      </div>
       <p>
-        Use [Shipyard] to deploy your app to the cloud, following these simple
-        steps:
+        Use
+        <b><a :href="url1" target="_blank" rel="noopener">Shipyard</a></b> to
+        deploy your app to the cloud, following these simple steps:
       </p>
       <ul>
-        <li>Go to https://shipyard.build.</li>
-        <li>Sign in using your GitHub credentials.</li>
         <li>
-          Click Add Repository to select the repo for this starter project.
+          Go to
+          <b
+            ><a :href="url1" target="_blank" rel="noopener"
+              >https://shipyard.build
+            </a></b
+          >
+          .
         </li>
-        <li>Select the branch you'd like to deploy.</li>
-        <li>Click Deploy to deploy the app!</li>
+        <li>
+          <b>Sign in</b> using your
+          <b><a :href="url2" target="_blank" rel="noopener">GitHub</a></b>
+          credentials.
+        </li>
+        <li>
+          Click <b>Add Repository</b> to select the repo for this starter
+          project.
+        </li>
+        <li><b>Select the branch</b> you'd like to deploy.</li>
+        <li>Click <b>Deploy</b> to deploy the app!</li>
       </ul>
       <p>
         Once the app is up and running, you'll be able to see it by clicking the
@@ -27,5 +44,9 @@
 <script>
 export default {
   name: 'DeployCard',
+  data: () => ({
+    url1: 'https://shipyard.build/',
+    url2: 'https://github.com/'
+  })
 };
 </script>

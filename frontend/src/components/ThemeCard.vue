@@ -1,14 +1,19 @@
 <template>
   <v-col cols="12" sm="4">
-    <v-card class="pa-2" outlined tile>
-      <h2>Update Appearance</h2>
+    <v-card class="pa-2 card" outlined tile>
+      <h2>Update appearance</h2>
       <p>
         Modify the appearance of your app by using Vuetify's built-in themes, or
         by creating a custom theme.
       </p>
       <p>
-        To switch from Dark Mode to Light Mode, open
-        [frontend/src/plugins/vuetify.js] and replace the following code:
+        To switch from <b>Dark Mode</b> to <b>Light Mode</b>, open
+        <code>
+          <a :href="url1" target="_blank" rel="noopener"
+            >frontend/src/plugins/vuetify.js</a
+          >
+        </code>
+        and replace the following code:
       </p>
       <div class="editor-container">
         <prism-editor
@@ -28,7 +33,12 @@
         >
         </prism-editor>
       </div>
-      <p>[Click here] to learn more about Vuetify themes.</p>
+      <p>
+        <a :href="url2" target="_blank" rel="noopener">
+          <b>Click here</b>
+        </a>
+        to learn more about Vuetify themes.
+      </p>
     </v-card>
   </v-col>
 </template>
@@ -50,7 +60,9 @@ export default {
   },
   data: () => ({
     codeSnippet1: ' 7 |    theme: { dark: true }',
-    codeSnippet2: ' 7 |    theme: { dark: false }'
+    codeSnippet2: ' 7 |    theme: { dark: false }',
+    url1: `${process.env.VUE_APP_STARTER_REPO_URL}frontend/src/plugins/vuetify.js#L7`,
+    url2: 'https://vuetifyjs.com/en/features/theme/#theme-generator'
   }),
   methods: {
     highlighter(code) {
