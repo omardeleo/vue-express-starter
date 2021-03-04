@@ -34,11 +34,29 @@ export default {
     ReloadCard,
     ConnectCard,
     UploadCard,
-    DeployCard,
+    DeployCard
   },
 
   data: () => ({
     //
-  }),
+  })
 };
 </script>
+
+<style lang="scss">
+.my-editor {
+  background: #2d2d2d;
+  color: #ccc;
+  width: auto;
+  overflow-wrap: normal;
+  font-family: Fira code, Fira Mono, Consolas, Menlo, Courier, monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  padding: 5px;
+  width: 700px;
+}
+
+.editor-container {
+  overflow: auto;
+}
+</style>

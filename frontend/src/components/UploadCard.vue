@@ -47,8 +47,8 @@ export default {
   data() {
     return {
       data: {
-        filenames: [],
-      },
+        filenames: []
+      }
     };
   },
   mounted() {
@@ -60,19 +60,18 @@ export default {
     },
     async fetchBucketFiles() {
       fetch('api/v1/files')
-        .then((res) => res.json())
+        .then(res => res.json())
         .then(
-          (result) => {
+          result => {
             const bucket = result['Name'];
             const filenames = result['Contents']
               ? result['Contents']
-                  .map((file) => `${bucket}/${file['Key']}`)
+                  .map(file => `${bucket}/${file['Key']}`)
                   .reverse()
               : [];
-            console.log('filenames', filenames);
             this.data.filenames = filenames;
           },
-          (error) => {
+          error => {
             console.log(error);
           }
         );
@@ -88,13 +87,13 @@ export default {
         formData.append('file', file[0]);
         await fetch('/api/v1/files/upload/', {
           method: 'POST',
-          body: formData,
+          body: formData
         });
         this.fetchBucketFiles();
       } catch (error) {
         alert(error);
       }
-    },
-  },
+    }
+  }
 };
 </script>
