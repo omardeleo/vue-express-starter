@@ -1,10 +1,10 @@
 <template>
-  <v-col cols="12" sm="4">
-    <v-card class="pa-2 card" outlined tile>
-      <h2>Deploy your app to the cloud</h2>
-      <div>
+  <v-col cols="12" xs="12" sm="12" md="6" lg="4">
+    <v-card class="px-8 pt-8 card" outlined>
+      <h2 class="mb-1">Deploy your app to the cloud</h2>
+      <div class="d-flex mb-6 align-center">
         <h3>Powered by</h3>
-        <img src="../assets/logo.png" />
+        <img class="ml-2" width="120" src="../assets/logo.png" />
       </div>
       <p>
         Use
@@ -33,7 +33,7 @@
         <li><b>Select the branch</b> you'd like to deploy.</li>
         <li>Click <b>Deploy</b> to deploy the app!</li>
       </ul>
-      <p>
+      <p class="mt-3">
         Once the app is up and running, you'll be able to see it by clicking the
         <b>View Live Environment</b> icon.
       </p>
@@ -50,3 +50,9 @@ export default {
   })
 };
 </script>
+
+<style scoped>
+li {
+  margin-bottom: 8px;
+}
+</style>

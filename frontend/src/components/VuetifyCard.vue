@@ -1,14 +1,16 @@
 <template>
-  <v-col cols="12" sm="4">
-    <v-card class="pa-2 card" outlined tile>
-      <h2>Use Vuetify components</h2>
-      <p>Vuetify provides a variety of UI components to render data.</p>
+  <v-col cols="12" xs="12" sm="12" md="6" lg="4">
+    <v-card class="px-8 pt-8 card" outlined>
+      <h2 class="mb-7">Use Vuetify components</h2>
+      <p class="mb-6">
+        Vuetify provides a variety of UI components to render data.
+      </p>
       <v-list-item-group>
         <v-chip v-for="season of seasons" :key="season">
           {{ season }}
         </v-chip>
       </v-list-item-group>
-      <p>
+      <p class="mt-6">
         To change the <b>chips</b> above to <b>list items</b>, open
         <code>
           <a :href="url1" target="_blank" rel="noopener">
@@ -26,7 +28,7 @@
         >
         </prism-editor>
       </div>
-      <p>with:</p>
+      <p class="mt-4">with:</p>
       <div class="editor-container">
         <prism-editor
           class="my-editor"
@@ -36,7 +38,7 @@
         >
         </prism-editor>
       </div>
-      <p>
+      <p class="mt-5">
         Read the Vuetify docs to learn more about components:
         <b>
           <a :href="url2" target="_blank" rel="noopener">

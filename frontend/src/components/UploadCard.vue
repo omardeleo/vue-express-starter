@@ -1,10 +1,10 @@
 <template>
-  <v-col cols="12" sm="4">
-    <v-card class="pa-2 card" outlined tile>
-      <h2>Store files in S3, locally</h2>
-      <div>
+  <v-col cols="12" xs="12" sm="12" md="6" lg="4">
+    <v-card class="px-8 pt-8 card" outlined>
+      <h2 class="mb-1">Store files in S3, locally</h2>
+      <div class="d-flex mb-6 align-center">
         <h3>Powered by</h3>
-        <img src="../assets/localStackLogo.png" />
+        <img class="ml-2" width="75" src="../assets/localStackLogo.png" />
       </div>
       <p>Click below to select and upload an image from your computer.</p>
       <p>
@@ -13,15 +13,11 @@
         - a fully functional local AWS cloud stack, and displayed below.
       </p>
       <div>
-        <v-btn
-          depressed
-          elevation="2"
-          color="primary"
-          outlined
-          @click="clickHandler"
-        >
-          UPLOAD IMAGE
-        </v-btn>
+        <div class="d-flex justify-center my-7">
+          <v-btn color="grey darken-2" small @click="clickHandler">
+            UPLOAD IMAGE
+          </v-btn>
+        </div>
         <input
           ref="uploader"
           class="d-none"
@@ -37,7 +33,7 @@
           class="d-flex child-flex"
           cols="4"
         >
-          <v-img :src="filename"></v-img>
+          <v-img aspect-ratio="1" :src="filename"></v-img>
         </v-col>
       </v-row>
     </v-card>

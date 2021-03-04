@@ -1,7 +1,7 @@
 <template>
-  <v-col cols="12" sm="4">
-    <v-card class="pa-2 card" outlined tile>
-      <h2>Update appearance</h2>
+  <v-col cols="12" xs="12" sm="12" md="6" lg="4">
+    <v-card class="px-8 pt-8 card" outlined>
+      <h2 class="mb-7">Update appearance</h2>
       <p>
         Modify the appearance of your app by using Vuetify's built-in themes, or
         by creating a custom theme.
@@ -24,7 +24,7 @@
         >
         </prism-editor>
       </div>
-      <p>with:</p>
+      <p class="mt-4">with:</p>
       <div class="editor-container">
         <prism-editor
           class="my-editor"
@@ -33,7 +33,7 @@
         >
         </prism-editor>
       </div>
-      <p>
+      <p class="mt-5">
         <a :href="url2" target="_blank" rel="noopener">
           <b>Click here</b>
         </a>

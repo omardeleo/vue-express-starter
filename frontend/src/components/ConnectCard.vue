@@ -1,29 +1,25 @@
 <template>
-  <v-col cols="12" sm="4">
-    <v-card class="pa-2 card" outlined tile>
-      <h2>Connect to a server</h2>
-      <div>
+  <v-col cols="12" xs="12" sm="12" md="6" lg="4">
+    <v-card class="px-8 pt-8 card" outlined>
+      <h2 class="mb-1">Connect to a server</h2>
+      <div class="d-flex mb-6 align-center">
         <h3>Powered by</h3>
-        <img src="../assets/express.png" />
+        <img class="ml-2" width="75" src="../assets/express.png" />
       </div>
       <p>
         This Vue frontend is connected to an Express server. Below is the
         response message we receive when we ping the server:
       </p>
-      <p>{{ response }}</p>
+      <p class="response px-1">> {{ response }}</p>
       <p>
         The server ping count is stored to the database. Click below to
         <b>reset the counter</b>:
       </p>
-      <v-btn
-        depressed
-        elevation="2"
-        color="primary"
-        outlined
-        @click="resetCounter"
-      >
-        RESET COUNTER
-      </v-btn>
+      <div class="d-flex justify-center my-7">
+        <v-btn color="grey darken-2" small @click="resetCounter">
+          RESET COUNTER
+        </v-btn>
+      </div>
       <p>
         The <b>endpoint</b> that resets the ping counter is located in
         <code>
@@ -98,3 +94,12 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.response {
+  font-family: monospace;
+  color: limeGreen;
+  font-size: 0.9em;
+  background: black;
+}
+</style>
