@@ -10,6 +10,6 @@ RUN npm install
 # Add the code
 COPY src/ src/
 COPY public/ public/
-COPY README.md babel.config.js vue.config.js ./
+COPY babel.config.js vue.config.js ./
 
 CMD ["npm", "run", "serve"]
