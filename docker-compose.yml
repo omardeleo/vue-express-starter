@@ -34,6 +34,10 @@ services:
     build:
       context: 'backend'
     environment:
+      OMAR: ${OMAR}
+      DEV: ${DEV}
+      DEV2: ${DEV2}
+      HAHA: ${HAHA}
       DB_USER: 'obscure-user'
       DB_PASSWORD: 'obscure-password'
       DB_NAME: 'app'
